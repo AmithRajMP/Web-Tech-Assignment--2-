@@ -15,6 +15,7 @@ def position_list(db, limit=10):
 
 
 
+
 def position_get(db, id):
     """Return the details of the position with the given id
     or None if there is no position with this id
