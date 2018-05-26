@@ -53,7 +53,6 @@ class LevelAUnitTests(unittest.TestCase):
 
         self.assertEqual("CircleCI", position[5])
         self.assertEqual("Staff Site Reliability Engineer ", position[3])
-
         # get a position that doesn't exist, result should be None
         position = interface.position_get(self.db, 9999999)
         self.assertIsNone(position)

@@ -1,4 +1,4 @@
-__author__ = 'Steve Cassidy'
+__author__ = 'Amith Raj'
 
 from bottle import Bottle, template, static_file
 
