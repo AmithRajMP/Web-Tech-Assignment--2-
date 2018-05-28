@@ -27,6 +27,9 @@ def position_list(db, limit=10):
     return cursor.fetchall()
 
 
+"""Fetching all the queries because the position_list function fetches 10 rows in the query"""
+
+
 def position_get(db, id):
     """Return the details of the position with the given id
     or None if there is no position with this id

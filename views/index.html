@@ -2,3 +2,28 @@
 
 
 
+<div class="row">
+
+
+% for jobposts in positions:        
+        <div class="card" style="width: 18rem;">
+            <div class="card-header">
+                <h5 class="card-title">{{jobposts[3]}}</h5>
+                <div class="company">{{jobposts[5]}}</div>
+            </div>
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-muted">
+                    <span class="user">{{jobposts[2]}}:</span>
+                    <span class="timestamp">{{jobposts[1]}}</span>
+                </h6>
+                <p class="card-text"> {{!jobposts[6][:100]}}</p>
+                <a class="card-link" href="/positions/{{jobposts[0]}}">Read More</a>
+            </div>
+        </div>
+% end
+
+<!-- Using the passed 'positions' value to display the most recent job details in the home page. 
+Since the limit is 10, the for loop gets executed 10 times and 10 posts will be available for the user to see.
+Description is less than 100 words and has escaped html.
+The URL for readmore link is /positions/DD where DD is the jobid -->
+</div>

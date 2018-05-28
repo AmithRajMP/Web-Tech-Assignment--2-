@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="Steve Cassidy">
+    <meta name="author" content="Amith Raj & Steve Cassidy">
 
-    <title>About this Site</title>
+    <title>Position Detail</title>
 
       <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
       <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
@@ -45,22 +45,21 @@
     <div class="container">
 
         <div class="header">
-            <h1>About this Site</h1>
+            <h1>Position Detail</h1>
         </div>
         
-<div class='container-fluid'>
- <div class='row'>
+<div>
+    <h2>{{description[3]}}</h2>
 
-        <p>Jobs is a new, exciting, job posting service like nothing you've seen before!</p>
+    <p><strong>Posted on</strong> {{description[1]}} by {{description[2]}} ({{description[5]}} )</p>
+    <p><strong>Location:</strong> {{description[4]}}</p>
+    <div class="position_body">
+        {{!description[6]}}
+    </div>
 
-        <p>The avatars used on this site are generated based on the user name using the
-        excellent <a href="http://robohash.org/">Robohash</a> service.  Robohash generates
-        a random robot based on any input string.</p>
-
-        <p>Author: Steve Cassidy (Steve.Cassidy@mq.edu.au)</p>
-
-  </div>
-  </div>
+</div>
+<!-- Using the passed 'description' value to display the job details and descriptions with 
+  escaped html from expand function from main.py -->
 
     </div>
 
