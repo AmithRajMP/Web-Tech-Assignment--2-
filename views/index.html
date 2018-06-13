@@ -1,8 +1,39 @@
 % rebase('base.html')
 
 
+<div class="navbar navbar-expand-lg navbar-dark bg-dark" role="navigation">
+      <a class="navbar-brand" href="#">Jobs!</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
 
-<div class="row">
+      <div class="collapse navbar-collapse">
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="/static/about.html">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="/static/assignment.html">Assignment Spec</a></li>
+          </ul>
+      </div>
+            <form id='loginform' class="form-inline" role="login" method='post' action='/login'>
+            <div class="form-group">
+              <input type="text" name='nick' class="form-control" placeholder="Username">
+            </div>
+            <div class="form-group">
+              <input type="password" name='password' class="form-control" placeholder="Password">
+            </div>
+            <input type="submit" class="btn btn-default" value='Login' >
+        </form>
+    </div>
+
+    <div class="container">
+
+        <div class="header">
+            <h1>¡Welcome to Jobs!</h1>
+        </div>
+        
+
+<div class="jobposts">
+    <div class="row">
 
 
 % for jobposts in positions:        

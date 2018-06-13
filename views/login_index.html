@@ -1,0 +1,66 @@
+% rebase('base.html')
+
+
+  <div class="navbar navbar-expand-lg navbar-dark bg-dark" role="navigation">
+      <a class="navbar-brand" href="#">Jobs!</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse">
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="/static/about.html">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="/static/assignment.html">Assignment Spec</a></li>
+          </ul>
+      </div>
+      <!--When a user has logged in, the nav bar displays the username and the avatar
+        When the user clicks on avatar it redirects the user to root
+        Logout button is visible when logged in-->
+        <div class="navbar-text"> <a href="/"><img src="{{avatar}}" alt="avatar" style="width:50px;height:50px;"> </a> Logged in as {{user}} &nbsp;</div>
+        <form id='logoutform' class="form-inline" role="logout" action='/logout'>
+            <input type="submit" class="btn btn-default" name='logout' value='Logout' >
+        </form>
+    </div>
+
+
+    <div class="container">
+
+        <div class="header">
+            <h1>¡Welcome to Jobs!</h1>
+        </div>
+<div class="jobposts">
+          <!--Logged in user can add positions using this form. These values are retrieved in the backend and is updated in the database-->
+            <form id='postform' class="" action='/post'>
+                <h4>Add a new job/position</h4>
+                <ul>
+                    <li><label for="title">Title :</label><input name="title"></li>
+                    <li><label for="company">Company :</label><input name="company"></li>
+                    <li><label for="location">Location :</label><input name="location"></li>
+                    <li><textarea name="description" rows="3" placeholder="Job Description"></textarea></li>
+                    <li><input type="submit" class="btn btn-default" name='submit' value='Submit' ></li>
+                </ul>
+            </form>
+    <div class="row">
+% for jobposts in positions:        
+        <div class="card" style="width: 18rem;">
+            <div class="card-header">
+                <h5 class="card-title">{{jobposts[3]}}</h5>
+                <div class="company">{{jobposts[5]}}</div>
+            </div>
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-muted">
+                    <span class="user">{{jobposts[2]}}:</span>
+                    <span class="timestamp">{{jobposts[1]}}</span>
+                </h6>
+                <p class="card-text"> {{!jobposts[6][:100]}}</p>
+                <a class="card-link" href="/positions/{{jobposts[0]}}">Read More</a>
+            </div>
+        </div>
+% end
+
+<!-- Using the passed 'positions' value to display the most recent job details in the home page. 
+Since the limit is 10, the for loop gets executed 10 times and 10 posts will be available for the user to see.
+Description is less than 100 words and has escaped html.
+The URL for readmore link is /positions/DD where DD is the jobid -->
+</div>

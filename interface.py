@@ -54,12 +54,11 @@ def position_get(db, id):
         return None
 
 
-
 def position_add(db, usernick, title, location, company, description):
     """Add a new post to the database.
     The date of the post will be the current time and date.
-    Only add the record if usernick matches an existing user
-
+    Only add the record if usernick matches an existing user.
+    Use CURRENT_TIMESTAMP to pass the timestamp value.
     Return True if the record was added, False if not."""
     cursor = db.cursor()
     query = """SELECT nick FROM users WHERE nick=?"""
