@@ -10,4 +10,6 @@ with Git.
 
 A demonstration version of the application is running at 
 http://comp249.stevecassidy.net/ 
-
+This code is submitted to the asignment. Any copies / duplications of this code without 
+permission will result in legal and academic penalty from the university and the author. 
+This code is for reference only.
